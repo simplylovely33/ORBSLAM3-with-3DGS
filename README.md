@@ -14,4 +14,4 @@ sudo apt install ros-noetic-camera-calibration    ### Calibration package instal
 roslaunch usb_cam usb_cam-test.launch    ### Open the camera from /usb_cam/image_raw
 rosrun camera_calibration cameracalibrator.py --size H*V --square S image:=/usb_cam/image_raw
 ```
-`H,V` in `--size` indicate the number of horizontal and vertical inner corners respectively. `S` in `--square` indicate the size of each square on the checkboard, in meters.
+`H,V` in `--size` indicate the number of horizontal and vertical inner corners respectively. `S` in `--square` indicate the size of each square on the checkboard, in meters. After you click the SAVE button in the display window, the calibration data is saved in '/tmp/calibrationdata.tar.gz'
