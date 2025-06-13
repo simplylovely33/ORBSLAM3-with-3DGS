@@ -24,6 +24,21 @@ roslaunch realsense2_camera rs_rgbd.launch      ### Launch file to open the came
 But there is still an error occur when open the current frame and ORB-SLAM3 Map Viewer window. Try to use the `gdb` command to debug.
 ```
 gdb /Examples/ROS/ORB_SLAM3/RGBD      ### Getting into the debug mode
-(gdb) run Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM3/MyD435.yaml /camera/rgb/image_raw:=/camera/color/image_raw /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw
+(gdb) run Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM3/MyD435.yaml /camera/rgb/image_raw:=/camera/color/image_raw /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw      ### Configuration Setting
 ```
 `LEFT:=RIGHT`， left indicate the name of subscribe topic and right express the input topic. 
+
+2026.6.13
+We change the chain of think thread to begin with ORB-SLAM2 instead of beginning with ORB-SLAM3(because there is clear open-source tutorial)
+'''
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$PWD/Examples/ROS/ORB_SLAM2      ### Configure ROS environment variables.
+roslaunch realsense2_camera rs_rgbd.launch   ### Launch file to open image read node.
+rosrun ORB_SLAM2 RGBD \      ### Start ORB-SLAM2(RGBD) command
+    Vocabulary/ORBvoc.txt \
+    Examples/RGB-D/RealSenseD435.yaml \
+    /camera/rgb/image_raw:=/camera/color/image_raw \
+    /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw
+'''
+
+
+
