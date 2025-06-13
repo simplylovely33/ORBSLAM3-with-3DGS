@@ -17,6 +17,7 @@ rosrun camera_calibration cameracalibrator.py --size H*V --square S image:=/usb_
 `H,V` in `--size` indicate the number of horizontal and vertical inner corners respectively. `S` in `--square` indicate the size of each square on the checkboard, in meters. After you click the SAVE button in the display window, the calibration data is saved in '/tmp/calibrationdata.tar.gz'
 
 2026.6.12
+
 We use the `roslaunch` to read the rgb and depth images from the camera.
 ```
 roslaunch realsense2_camera rs_rgbd.launch      ### Launch file to open the camera reading node.
@@ -29,6 +30,7 @@ gdb /Examples/ROS/ORB_SLAM3/RGBD      ### Getting into the debug mode
 `LEFT:=RIGHT`， left indicate the name of subscribe topic and right express the input topic. 
 
 2026.6.13
+
 We change the chain of think thread to begin with ORB-SLAM2 instead of beginning with ORB-SLAM3(because there is clear open-source tutorial)
 '''
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$PWD/Examples/ROS/ORB_SLAM2      ### Configure ROS environment variables.
