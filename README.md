@@ -9,9 +9,21 @@ Camera selection is Intel Realsense D435, we have implemented the project with *
 
 We use the Intel Realsense D435 as the capturing device, and use the `ROS Camera Calibration` package to calibrate the camera.
 ```
-sudo apt-get install ros-noetic-usb-cam    ### Usb cam package installation
-sudo apt install ros-noetic-camera-calibration    ### Calibration package installation
-roslaunch usb_cam usb_cam-test.launch    ### Open the camera from /usb_cam/image_raw
-rosrun camera_calibration cameracalibrator.py --size H*V --square S image:=/usb_cam/image_raw
+sudo apt-get install ros-noetic-usb-cam      ### Usb cam package installation
+sudo apt install ros-noetic-camera-calibration      ### Calibration package installation
+roslaunch usb_cam usb_cam-test.launch      ### Open the camera from /usb_cam/image_raw
+rosrun camera_calibration cameracalibrator.py --size H*V --square S image:=/usb_cam/image_raw      ### Calibrate the camera with corresponding setting
 ```
 `H,V` in `--size` indicate the number of horizontal and vertical inner corners respectively. `S` in `--square` indicate the size of each square on the checkboard, in meters. After you click the SAVE button in the display window, the calibration data is saved in '/tmp/calibrationdata.tar.gz'
+
+2026.6.12
+We use the `roslaunch` to read the rgb and depth images from the camera.
+```
+roslaunch realsense2_camera rs_rgbd.launch      ### Launch file to open the camera reading node.
+```
+But there is still an error occur when open the current frame and ORB-SLAM3 Map Viewer window. Try to use the `gdb` command to debug.
+```
+gdb /Examples/ROS/ORB_SLAM3/RGBD      ### Getting into the debug mode
+(gdb) run Vocabulary/ORBvoc.txt Examples/ROS/ORB_SLAM3/MyD435.yaml /camera/rgb/image_raw:=/camera/color/image_raw /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw
+```
+`LEFT:=RIGHT`， left indicate the name of subscribe topic and right express the input topic. 
