@@ -35,12 +35,9 @@ We change the chain of think thread to begin with ORB-SLAM2 instead of beginning
 ```
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$PWD/Examples/ROS/ORB_SLAM2      ### Configure ROS environment variables.
 roslaunch realsense2_camera rs_rgbd.launch   ### Launch file to open image read node.
-rosrun ORB_SLAM2 RGBD \      ### Start ORB-SLAM2(RGBD) command
-    Vocabulary/ORBvoc.txt \
-    Examples/RGB-D/RealSenseD435.yaml \
-    /camera/rgb/image_raw:=/camera/color/image_raw \
-    /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw
+rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/RealSenseD435.yaml /camera/rgb/image_raw:=/camera/color/image_raw /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw      ### Start ORB-SLAM2(RGBD) command
 ```
+
 
 
 
