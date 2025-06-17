@@ -56,8 +56,13 @@ Use an SSH tunnel on the user end to connect to the server port：
 ```
 ssh -L PORT:localhost:PORT user@your.server.ip  # Access server port
 ```
+**DIFFUCULT**:
 
-
+Shells or overlapping parts appear on the point cloud surface reconstructed from the ring sequence due to VGGT's lack of visible loop closure optimization.
+```
+python demo_colmap.py --scene_dir DATA_PATH --use_ba  #  Use Bundle Adjustment to eliminate the error
+```
+Performs well in continuous image camera movements, but fails in ring photography studios where camera settings are far apart.
 
 
 
