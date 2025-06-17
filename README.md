@@ -38,6 +38,19 @@ roslaunch realsense2_camera rs_rgbd.launch   ### Launch file to open image read 
 rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/RealSenseD435.yaml /camera/rgb/image_raw:=/camera/color/image_raw /camera/depth_registered/image_raw:=/camera/aligned_depth_to_color/image_raw      ### Start ORB-SLAM2(RGBD) command
 ```
 
+2026.6.16
+Read the 2025 CVPR Best Paper [VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/pdf/2503.11651), which is a severely impressive work.
+Reproduce and local model deployment,
+
+2026.6.17
+Prepare in-house dataset for VGGT application
+
+
+
+
+
+
+
 
 
 
