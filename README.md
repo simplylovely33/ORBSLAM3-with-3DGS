@@ -39,10 +39,12 @@ rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/RealSenseD435.yaml /c
 ```
 
 2026.6.16
+
 Read the 2025 CVPR Best Paper [VGGT: Visual Geometry Grounded Transformer](https://arxiv.org/pdf/2503.11651), which is a severely impressive work.
 Reproduce and local model deployment,
 
 2026.6.17
+
 Prepare in-house dataset for VGGT application
 
 
