@@ -86,6 +86,7 @@ Configure the Tsinghua download mirror by context in [.condarc](https://github.c
 conda config
 sudo gedit ~/.condarc  #  Copy the context into the file
 conda config --show-sources
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  #  Configure the pip download source
 ```
 
 Pycharm Installation Community [Download](https://download.jetbrains.com/python/pycharm-community-2025.1.2.tar.gz?_gl=1*1xp5ksj*_gcl_au*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*FPAU*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*_ga*MTU2MTIxOTQxNC4xNzUwMjE2MDMy*_ga_9J976DJZ68*czE3NTAyMzE0MjckbzIkZzEkdDE3NTAyMzE2MjgkajU2JGwwJGgw)
@@ -95,7 +96,7 @@ rm pycharm-community-2025.1.2.tar.gz
 cd pycharm-community-2025.1.2
 ./bin/pycharm.sh
 ```
-Remember choose the Tools->Create Desktop Entry... to load the Pycharm Community shortcut
+Remember choose the `Tools`->`Create Desktop Entry...` to load the Pycharm Community shortcut
 
 Cmake Tool Installation [Download](https://cmake.org/files/) (Example:[Cmake-3.26.0](https://cmake.org/files/v3.26/cmake-3.26.0.tar.gz))
 ```
