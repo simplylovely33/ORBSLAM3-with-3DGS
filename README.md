@@ -81,10 +81,11 @@ export PATH=~/anaconda3/bin:$PATH  #  Add environment variable
 source ~/.bashrc  #  Save the environment
 conda -V  #  Check anaconda version
 ```
-Configure the Tsinghua download mirror
+Configure the Tsinghua download mirror by context in [.condarc](https://github.com/simplylovely33/ORBSLAM3-with-3DGS/blob/main/.condarc)
 ```
 conda config
-sudo gedit ~/.condarc
+sudo gedit ~/.condarc  #  Copy the context into the file
+conda config --show-sources
 ```
 
 
