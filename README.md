@@ -88,6 +88,37 @@ sudo gedit ~/.condarc  #  Copy the context into the file
 conda config --show-sources
 ```
 
+Pycharm Installation Community [Download](https://download.jetbrains.com/python/pycharm-community-2025.1.2.tar.gz?_gl=1*1xp5ksj*_gcl_au*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*FPAU*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*_ga*MTU2MTIxOTQxNC4xNzUwMjE2MDMy*_ga_9J976DJZ68*czE3NTAyMzE0MjckbzIkZzEkdDE3NTAyMzE2MjgkajU2JGwwJGgw)
+```
+tar -zxvf pycharm-community-2025.1.2.tar.gz
+rm pycharm-community-2025.1.2.tar.gz
+cd pycharm-community-2025.1.2
+./bin/pycharm.sh
+```
+Remember choose the Tools->Create Desktop Entry... to load the Pycharm Community shortcut
+
+Cmake Tool Installation [Download](https://cmake.org/files/) (Example:[Cmake-3.26.0](https://cmake.org/files/v3.26/cmake-3.26.0.tar.gz))
+```
+tar -zxvf cmake-3.26.0.tar.gz
+rm cmake-3.26.0.tar.gz && cd cmake-3.26.0
+./bootstrap  #  Examination the cmake
+(option) sudo apt-get install libssl-dev  #  if the OPENSSL ERROR occur
+make -j  # Complie the cmake
+sudo make install #  Install the software or tool
+```
+
+The torch version must align with the cuda version in [3D Gaussain Splatting](https://arxiv.org/pdf/2308.04079), so we install the convenient version [Cuda12.1](https://developer.nvidia.com/cuda-12-1-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local)
+```
+wget https://developer.download.nvidia.com/compute/cuda/12.1.1/local_installers/cuda_12.1.1_530.30.02_linux.run
+sudo sh cuda_12.1.1_530.30.02_linux.run
+```
+If you have already install the driver, remember cancel the `driver` button.
+```
+echo 'export PATH=/usr/local/cuda/bin:/usr/local/cuda-12.1/bin${PATH:+:${PATH}}' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda-12.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
+source ~/.bashrc
+```
 
 
 
