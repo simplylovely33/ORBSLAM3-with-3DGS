@@ -64,6 +64,31 @@ python demo_colmap.py --scene_dir DATA_PATH --use_ba  #  Use Bundle Adjustment t
 ```
 Performs well in continuous image camera movements, but fails in ring photography studios where camera settings are far apart.
 
+2026.6.18
+
+New computer environment configuration setting with **NVIDIA GeForce RTX 4060** on **Ubuntu 24.04**
+
+Network deployment [Clash-verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.0.3/Clash.Verge_2.0.3_amd64.deb)
+```
+sudo dpkg -i Clash.Verge_2.0.3_amd64.deb
+```
+
+Anaconda installation [Tsinghua Mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/?C=M&O=D) with required version (Example:[Anaconda3-2023.09-0-Linux-x86_64.sh](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh))
+```
+bash Anaconda3-2023.09-0-Linux-x86_64.sh
+sudo gedit ~/.bashrc  #  Edit the environment
+export PATH=~/anaconda3/bin:$PATH  #  Add environment variable
+source ~/.bashrc  #  Save the environment
+conda -V  #  Check anaconda version
+```
+Configure the Tsinghua download mirror
+```
+conda config
+sudo gedit ~/.condarc
+```
+
+
+
 
 
 
