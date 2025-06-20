@@ -66,7 +66,7 @@ Performs well in continuous image camera movements, but fails in ring photograph
 
 2026.6.18
 
-New computer environment configuration setting with **NVIDIA GeForce RTX 4060** on **Ubuntu 24.04**
+New computer environment configuration setting with **NVIDIA GeForce RTX 4060** and **5090** on **Ubuntu 24.04**
 
 Network deployment [Clash-verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.0.3/Clash.Verge_2.0.3_amd64.deb)
 ```
@@ -120,6 +120,41 @@ echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda-12.1/lib64${L
 echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+2026.6.19
+
+SSH client Termius installation. Failed to download from the official website, using `snapd` to install the app.
+```
+sudo apt install snapd
+sudo snap install termius-app
+(option) sudo snap remove --purge termius-app  #  In case enter the wrong info, clear all configuration
+```
+You can deploy the different versions of cudatoolkit for the different demand. All your need is to configure the corresponding environment variable.
+```
+export PATH=/usr/local/cuda-xx.x/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-xx.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+`cuda-xx.x` indicate your installed cudatoolkit version.
+
+ERROR occur when using `NVIDIA GeForce RTX 5090` capability sm_120 is not compatible with the current PyTorch installation.
+```
+pip uninstall -y torch torchvision torchaudio  #  Delete the exist torch
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128  #  Install the sm_120 support torch 
+```
+
+
+2026.6.20
+
+VGGT on the masked dataset for the ring shot view are not satisfactory due to the fact that VGGT treats all pixels (including black) as valid pixels. Even after masking and `Filter Black Background`, the estimated camera references are not accurate.
+
+What works is to do the calculation via `demo_colmap.py`
+```
+python demo_colmap.py --scene_dir YOUR_DATA --query_frame_num 24 --max_query_pts 1024 --shared_camera (option)--use_ba
+```
+But there is problem that the result from `--use_ba`(Bundle Adjustment) is worse than without `--use_ba` ???
+
+Change to use the different angle view from the camera setting instead of the same row camera capture.
+
 
 
 
