@@ -73,7 +73,7 @@ Network deployment [Clash-verge](https://github.com/clash-verge-rev/clash-verge-
 sudo dpkg -i Clash.Verge_2.0.3_amd64.deb
 ```
 
-Anaconda installation [Tsinghua Mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/?C=M&O=D) with required version (Example:[Anaconda3-2023.09-0-Linux-x86_64.sh](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh))
+**Anaconda** installation on [Tsinghua Mirror](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/?C=M&O=D) with required version (Example:[Anaconda3-2023.09-0-Linux-x86_64.sh](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh))
 ```
 bash Anaconda3-2023.09-0-Linux-x86_64.sh
 sudo gedit ~/.bashrc  #  Edit the environment
@@ -89,7 +89,7 @@ conda config --show-sources
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  #  Configure the pip download source
 ```
 
-Pycharm Installation Community [Download](https://download.jetbrains.com/python/pycharm-community-2025.1.2.tar.gz?_gl=1*1xp5ksj*_gcl_au*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*FPAU*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*_ga*MTU2MTIxOTQxNC4xNzUwMjE2MDMy*_ga_9J976DJZ68*czE3NTAyMzE0MjckbzIkZzEkdDE3NTAyMzE2MjgkajU2JGwwJGgw)
+**Pycharm** installation(Community) [Download](https://download.jetbrains.com/python/pycharm-community-2025.1.2.tar.gz?_gl=1*1xp5ksj*_gcl_au*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*FPAU*MTQzMDYwMjcxOS4xNzUwMjE2MDMx*_ga*MTU2MTIxOTQxNC4xNzUwMjE2MDMy*_ga_9J976DJZ68*czE3NTAyMzE0MjckbzIkZzEkdDE3NTAyMzE2MjgkajU2JGwwJGgw)
 ```
 tar -zxvf pycharm-community-2025.1.2.tar.gz
 rm pycharm-community-2025.1.2.tar.gz
@@ -98,7 +98,7 @@ cd pycharm-community-2025.1.2
 ```
 Remember choose the `Tools`->`Create Desktop Entry...` to load the Pycharm Community shortcut
 
-Cmake Tool Installation [Download](https://cmake.org/files/) (Example:[Cmake-3.26.0](https://cmake.org/files/v3.26/cmake-3.26.0.tar.gz))
+**Cmake** installation [Download](https://cmake.org/files/) (Example:[Cmake-3.26.0](https://cmake.org/files/v3.26/cmake-3.26.0.tar.gz))
 ```
 tar -zxvf cmake-3.26.0.tar.gz
 rm cmake-3.26.0.tar.gz && cd cmake-3.26.0
@@ -108,7 +108,7 @@ make -j  # Complie the cmake
 sudo make install #  Install the software or tool
 ```
 
-The torch version must align with the cuda version in [3D Gaussain Splatting](https://arxiv.org/pdf/2308.04079), so we install the convenient version [Cuda12.1](https://developer.nvidia.com/cuda-12-1-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local)
+**Cudatoolkit** installation. The torch version must align with the cuda version in [3D Gaussain Splatting](https://arxiv.org/pdf/2308.04079), so we install the convenient version [Cuda12.1](https://developer.nvidia.com/cuda-12-1-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local)
 ```
 wget https://developer.download.nvidia.com/compute/cuda/12.1.1/local_installers/cuda_12.1.1_530.30.02_linux.run
 sudo sh cuda_12.1.1_530.30.02_linux.run
@@ -123,7 +123,7 @@ source ~/.bashrc
 
 2026.6.19
 
-SSH client Termius installation. Failed to download from the official website, using `snapd` to install the app.
+SSH client **Termius** installation. Failed to download from the official website, using `snapd` to install the app.
 ```
 sudo apt install snapd
 sudo snap install termius-app
@@ -144,6 +144,11 @@ pip install --pre torch torchvision torchaudio --index-url https://download.pyto
 
 
 2026.6.20
+
+**MeshLab** installation
+```
+sudo apt install meshlab  #  Most convenient command
+```
 
 VGGT on the masked dataset for the ring shot view are not satisfactory due to the fact that VGGT treats all pixels (including black) as valid pixels. Even after masking and `Filter Black Background`, the estimated camera references are not accurate.
 
